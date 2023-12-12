@@ -18,5 +18,10 @@ client = FloatplaneClient(username="john.doe@example.com", password="Password123
 
 @client.event(EVENTS.ON_NEW_VIDEO)
 def on_new_video(video):
+  if not video.isVOD:
+    print(f"New Video: {video.title} by {video.author}")
+  else:
+    print(f"New VOD: {video.title} by {video.author}")
+
 ```
 
